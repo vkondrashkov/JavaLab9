@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CardsView: class {
-    
+    func display(cardName: String)
 }
 
 class CardsViewController: UIViewController, CardsView {
@@ -22,9 +22,9 @@ class CardsViewController: UIViewController, CardsView {
     
     private var cardImage = UIImageView(frame: .zero)
     private var cardSuitLabel = UILabel(frame: .zero)
-    private var cardSuitField = UITextField(frame: .zero)
+    var cardSuitField = UITextField(frame: .zero)
     private var cardValueLabel = UILabel(frame: .zero)
-    private var cardValueField = UITextField(frame: .zero)
+    var cardValueField = UITextField(frame: .zero)
     
     private var throwCardButton = UIButton(frame: .zero)
     private var throwRandomCardButton = UIButton(frame: .zero)
@@ -69,14 +69,14 @@ class CardsViewController: UIViewController, CardsView {
         throwCardButton.backgroundColor = UIColor(red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
         throwCardButton.setTitle("Throw", for: .normal)
         throwCardButton.layer.cornerRadius = 5
-        // Add target
+        throwCardButton.addTarget(self, action: #selector(throwCardButtonDidPressed(sender:)), for: .touchUpInside)
         containerView.addSubview(throwCardButton)
         activateThrowCardButtonConstraints(view: throwCardButton, anchorView: cardValueField)
         
         throwRandomCardButton.backgroundColor = UIColor(red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
         throwRandomCardButton.setTitle("Random", for: .normal)
         throwRandomCardButton.layer.cornerRadius = 5
-        // Add target
+        throwRandomCardButton.addTarget(self, action: #selector(throwRandomCardButtonDidPressed(sender:)), for: .touchUpInside)
         containerView.addSubview(throwRandomCardButton)
         activateThrowRandomCardButtonConstraints(view: throwRandomCardButton, anchorView: throwCardButton)
         
@@ -88,7 +88,20 @@ class CardsViewController: UIViewController, CardsView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Cards"
+        addKeyboardObservers()
+    }
+    
+    @objc func throwCardButtonDidPressed(sender: UIButton) {
+        presenter.throwCardButtonDidPressed()
+    }
+    
+    @objc func throwRandomCardButtonDidPressed(sender: UIButton) {
+        presenter.throwRandomCardButtonDidPressed()
+    }
+    
+    func display(cardName: String) {
+        let cardBack = UIImage(named: cardName)
+        cardImage.image = cardBack
     }
 }
 

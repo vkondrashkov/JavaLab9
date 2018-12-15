@@ -9,7 +9,8 @@
 import Foundation
 
 protocol CardsPresenter {
-    
+    func throwCardButtonDidPressed()
+    func throwRandomCardButtonDidPressed()
 }
 
 class CardsPresenterImplementation: CardsPresenter {
@@ -17,5 +18,25 @@ class CardsPresenterImplementation: CardsPresenter {
     
     init(view: CardsView) {
         self.view = view
+    }
+    
+    func throwCardButtonDidPressed() {
+        guard let view = view as? CardsViewController,
+            let cardSuitFieldText = view.cardSuitField.text,
+            let cardValueFieldText = view.cardValueField.text,
+            let cardSuitCode = Int(cardSuitFieldText),
+            let cardValueCode = Int(cardValueFieldText) else {
+                // Error
+                return
+        }
+        let card = Card(cardSuitCode: cardSuitCode, cardValueCode: cardValueCode)
+        view.display(cardName: card.name)
+    }
+    
+    func throwRandomCardButtonDidPressed() {
+        let cardSuitCode = Int.random(in: 1...4)
+        let cardValueCode = Int.random(in: 6...14)
+        let card = Card(cardSuitCode: cardSuitCode, cardValueCode: cardValueCode)
+        view.display(cardName: card.name)
     }
 }
