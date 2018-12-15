@@ -29,7 +29,9 @@ class TabBarCoordinator:  Coordinator {
         
         let cardsNavigation = UINavigationController()
         cardsCoordinator = CardsCoordinator(navigation: cardsNavigation)
-        cardsCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+        let cardsTabBarIcon = UIImage(named: "cards")
+        let cardsTabBarItem = UITabBarItem(title: "Cards", image: cardsTabBarIcon, tag: 0)
+        cardsCoordinator.rootViewController.tabBarItem = cardsTabBarItem
         controllers.append(cardsCoordinator.rootViewController)
         
         tabBarController.viewControllers = controllers

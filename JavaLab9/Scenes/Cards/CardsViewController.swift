@@ -88,6 +88,7 @@ class CardsViewController: UIViewController, CardsView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Cards" // Probably should be in loadView()
         addKeyboardObservers()
     }
     
