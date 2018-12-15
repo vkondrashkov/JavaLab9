@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6B46B6821C38B2000EDB570 /* CardsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B46B6721C38B2000EDB570 /* CardsCoordinator.swift */; };
+		D6B46B6A21C38B2B00EDB570 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B46B6921C38B2B00EDB570 /* CardsPresenter.swift */; };
+		D6B46B6C21C38B4200EDB570 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B46B6B21C38B4200EDB570 /* CardsViewController.swift */; };
 		D6FBEF8521C27A0B00F6534B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBEF8421C27A0B00F6534B /* AppDelegate.swift */; };
 		D6FBEF8C21C27A0F00F6534B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6FBEF8B21C27A0F00F6534B /* Assets.xcassets */; };
+		D6FBEF9F21C27D5700F6534B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBEF9E21C27D5700F6534B /* AppCoordinator.swift */; };
+		D6FBEFA121C27DE600F6534B /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBEFA021C27DE600F6534B /* TabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D6B46B6721C38B2000EDB570 /* CardsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCoordinator.swift; sourceTree = "<group>"; };
+		D6B46B6921C38B2B00EDB570 /* CardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
+		D6B46B6B21C38B4200EDB570 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		D6FBEF8121C27A0B00F6534B /* JavaLab9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaLab9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FBEF8421C27A0B00F6534B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FBEF8B21C27A0F00F6534B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6FBEF9021C27A0F00F6534B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6FBEF9E21C27D5700F6534B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D6FBEFA021C27DE600F6534B /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D6B46B6021C38AAF00EDB570 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				D6B46B6721C38B2000EDB570 /* CardsCoordinator.swift */,
+				D6B46B6B21C38B4200EDB570 /* CardsViewController.swift */,
+				D6B46B6921C38B2B00EDB570 /* CardsPresenter.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		D6B46B6121C38AD300EDB570 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		D6B46B6221C38ADA00EDB570 /* BusTicket */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusTicket;
+			sourceTree = "<group>";
+		};
+		D6B46B6321C38AEE00EDB570 /* HeadsOrTails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HeadsOrTails;
+			sourceTree = "<group>";
+		};
+		D6B46B6421C38AF700EDB570 /* MultiplicationTable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MultiplicationTable;
+			sourceTree = "<group>";
+		};
 		D6FBEF7821C27A0B00F6534B = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +101,7 @@
 				D6FBEF9721C27AF600F6534B /* Core */,
 				D6FBEF9621C27AED00F6534B /* Scenes */,
 				D6FBEF8421C27A0B00F6534B /* AppDelegate.swift */,
+				D6FBEF9E21C27D5700F6534B /* AppCoordinator.swift */,
 				D6FBEF8B21C27A0F00F6534B /* Assets.xcassets */,
 				D6FBEF9021C27A0F00F6534B /* Info.plist */,
 			);
@@ -62,6 +111,11 @@
 		D6FBEF9621C27AED00F6534B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D6B46B6421C38AF700EDB570 /* MultiplicationTable */,
+				D6B46B6321C38AEE00EDB570 /* HeadsOrTails */,
+				D6B46B6221C38ADA00EDB570 /* BusTicket */,
+				D6B46B6121C38AD300EDB570 /* Calculator */,
+				D6B46B6021C38AAF00EDB570 /* Cards */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -91,6 +145,7 @@
 		D6FBEF9A21C27B0E00F6534B /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				D6FBEFA021C27DE600F6534B /* TabBarCoordinator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -172,7 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6FBEF9F21C27D5700F6534B /* AppCoordinator.swift in Sources */,
 				D6FBEF8521C27A0B00F6534B /* AppDelegate.swift in Sources */,
+				D6B46B6C21C38B4200EDB570 /* CardsViewController.swift in Sources */,
+				D6B46B6821C38B2000EDB570 /* CardsCoordinator.swift in Sources */,
+				D6FBEFA121C27DE600F6534B /* TabBarCoordinator.swift in Sources */,
+				D6B46B6A21C38B2B00EDB570 /* CardsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
