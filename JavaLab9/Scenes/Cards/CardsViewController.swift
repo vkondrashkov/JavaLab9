@@ -15,11 +15,15 @@ protocol CardsView: class {
 class CardsViewController: UIViewController, CardsView {
     var presenter: CardsPresenter!
     
-    private let CARD_HEIGHT_TO_WIDTH_GRADE: CGFloat = 0.704;
+    private let CARD_HEIGHT_TO_WIDTH_GRADE: CGFloat = 0.704
+    private let cardAnimationDuration = 0.75
+    private var cardPerformsAnimation = false
     
     private var cardsView = UIView(frame: .zero)
     private var containerView = UIView(frame: .zero)
     
+    // Needs for animation
+    private var cardBack = UIImageView(frame: .zero)
     private var cardImage = UIImageView(frame: .zero)
     private var cardSuitLabel = UILabel(frame: .zero)
     var cardSuitField = UITextField(frame: .zero)
@@ -32,9 +36,12 @@ class CardsViewController: UIViewController, CardsView {
     override func loadView() {
         cardsView.backgroundColor = UIColor(red: 38.0 / 255.0, green: 81.0 / 255.0, blue: 127.0 / 255.0, alpha: 1)
         
-        cardImage.image = UIImage(named: "cardBack")
+        cardBack.image = UIImage(named: "cardBack")
+        cardImage.image = UIImage(named: "heart6")
+        containerView.addSubview(cardBack)
         containerView.addSubview(cardImage)
         activateCardImageConstraints(view: cardImage)
+        activateCardImageConstraints(view: cardBack)
         
         cardSuitLabel.text = "Suit"
         cardSuitLabel.font = .boldSystemFont(ofSize: 17)
@@ -93,16 +100,53 @@ class CardsViewController: UIViewController, CardsView {
     }
     
     @objc func throwCardButtonDidPressed(sender: UIButton) {
-        presenter.throwCardButtonDidPressed()
+        changeCardWithAnimation {
+            self.presenter.throwCardButtonDidPressed()
+        }
     }
     
     @objc func throwRandomCardButtonDidPressed(sender: UIButton) {
-        presenter.throwRandomCardButtonDidPressed()
+        changeCardWithAnimation {
+            self.presenter.throwRandomCardButtonDidPressed()
+        }
     }
     
     func display(cardName: String) {
         let cardBack = UIImage(named: cardName)
         cardImage.image = cardBack
+    }
+    
+    func changeCardWithAnimation(presenterCall: @escaping () -> Void) {
+        if cardPerformsAnimation { return }
+        cardPerformsAnimation = true
+        let transitionOptions: UIView.AnimationOptions = [.transitionFlipFromRight]
+        DispatchQueue.global(qos: .userInteractive).async {
+            DispatchQueue.main.async {
+                UIView.transition(with: self.cardBack, duration: self.cardAnimationDuration, options: transitionOptions, animations: {
+                    self.cardBack.isHidden = false
+                })
+                
+                UIView.transition(with: self.cardImage, duration: self.cardAnimationDuration, options: transitionOptions, animations: {
+                    self.cardImage.isHidden = false
+                })
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.cardAnimationDuration / 2.0) {
+                self.cardImage.isHidden = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.cardAnimationDuration) {
+                presenterCall()
+                UIView.transition(with: self.cardBack, duration: self.cardAnimationDuration, options: transitionOptions, animations: {
+                    self.cardBack.isHidden = false
+                })
+                
+                UIView.transition(with: self.cardImage, duration: self.cardAnimationDuration, options: transitionOptions, animations: {
+                    self.cardImage.isHidden = false
+                })
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.cardAnimationDuration * 2) {
+                self.cardPerformsAnimation = false
+            }
+        }
     }
 }
 

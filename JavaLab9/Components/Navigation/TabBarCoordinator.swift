@@ -40,6 +40,9 @@ class TabBarCoordinator:  Coordinator {
     
     func start() {
         cardsCoordinator.start()
+        //
+        //
+        //
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
     }

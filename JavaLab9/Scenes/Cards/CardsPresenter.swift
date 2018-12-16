@@ -25,8 +25,10 @@ class CardsPresenterImplementation: CardsPresenter {
             let cardSuitFieldText = view.cardSuitField.text,
             let cardValueFieldText = view.cardValueField.text,
             let cardSuitCode = Int(cardSuitFieldText),
-            let cardValueCode = Int(cardValueFieldText) else {
-                // Error
+            let cardValueCode = Int(cardValueFieldText),
+            (1...4).contains(cardSuitCode),
+            (6...14).contains(cardValueCode) else {
+                self.view.display(cardName: "cardUndefined")
                 return
         }
         let card = Card(cardSuitCode: cardSuitCode, cardValueCode: cardValueCode)

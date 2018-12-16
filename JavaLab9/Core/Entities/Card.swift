@@ -15,7 +15,7 @@ class Card {
     var name: String {
         guard let cardSuitName = cardSuit?.rawValue,
             let cardValueName = cardValue?.rawValue else {
-                return "cardBack"
+                return "cardUndefined"
         }
         return cardSuitName + cardValueName
     }
