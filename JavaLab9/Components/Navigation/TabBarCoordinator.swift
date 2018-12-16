@@ -10,16 +10,14 @@
 import UIKit
 
 class TabBarCoordinator:  Coordinator {
-    let window: UIWindow
-    let tabBarController: UITabBarController
-    var rootViewController: UITabBarController {
-        return tabBarController;
-    }
+    private let window: UIWindow
+    private let tabBarController: UITabBarController
     
     private let cardsCoordinator: CardsCoordinator
+    private let headsOrTailsCoordinator: HeadsOrTailsCoordinator
     
     var coordinators: [Coordinator] {
-        return [cardsCoordinator]
+        return [cardsCoordinator, headsOrTailsCoordinator]
     }
 
     init(window: UIWindow) {
@@ -28,22 +26,29 @@ class TabBarCoordinator:  Coordinator {
         var controllers: [UINavigationController] = []
         
         let cardsNavigation = UINavigationController()
-        cardsCoordinator = CardsCoordinator(navigation: cardsNavigation)
         let cardsTabBarIcon = UIImage(named: "cards")
         let cardsTabBarItem = UITabBarItem(title: "Cards", image: cardsTabBarIcon, tag: 0)
-        cardsCoordinator.rootViewController.tabBarItem = cardsTabBarItem
-        controllers.append(cardsCoordinator.rootViewController)
+        cardsNavigation.tabBarItem = cardsTabBarItem
+        cardsCoordinator = CardsCoordinator(navigation: cardsNavigation)
+        controllers.append(cardsNavigation)
+        
+        let headsOrTailsNavigation = UINavigationController()
+        let headsOrTailsTabBarIcon = UIImage(named: "headsOrTails")
+        let headsOrTailsTabBarItem = UITabBarItem(title: "Heads or Tails", image: headsOrTailsTabBarIcon, tag: 1)
+        headsOrTailsNavigation.tabBarItem = headsOrTailsTabBarItem
+        headsOrTailsCoordinator = HeadsOrTailsCoordinator(navigation: headsOrTailsNavigation)
+        controllers.append(headsOrTailsNavigation)
         
         tabBarController.viewControllers = controllers
     }
     
     
     func start() {
-        cardsCoordinator.start()
-        //
-        //
-        //
-        window.rootViewController = rootViewController
+        for coordinator in coordinators {
+            coordinator.start()
+        }
+
+        window.rootViewController = tabBarController
         window.makeKeyAndVisible()
     }
 }

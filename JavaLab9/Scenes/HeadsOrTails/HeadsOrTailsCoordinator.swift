@@ -1,14 +1,14 @@
 //
-//  CardsCoordinator.swift
+//  HeadsOrTailsCoordinator.swift
 //  JavaLab9
 //
-//  Created by Vladislav Kondrashkov on 12/14/18.
+//  Created by Vladislav Kondrashkov on 12/16/18.
 //  Copyright © 2018 Vladislav Kondrashkov. All rights reserved.
 //
 
 import UIKit
 
-class CardsCoordinator: Coordinator {
+class HeadsOrTailsCoordinator: Coordinator {
     private let navigation: UINavigationController
     
     init(navigation: UINavigationController) {
@@ -16,8 +16,8 @@ class CardsCoordinator: Coordinator {
     }
     
     func start() {
-        let view = CardsViewController()
-        let presenter = CardsPresenterImplementation(view: view)
+        let view = HeadsOrTailsViewController()
+        let presenter = HeadsOrTailsPresenterImplementation(view: view)
         view.presenter = presenter
         navigation.viewControllers = [view]
     }

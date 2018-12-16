@@ -14,6 +14,10 @@
 		D6BB31D521C4F219008FBFC4 /* CardValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BB31D421C4F219008FBFC4 /* CardValue.swift */; };
 		D6BB31D721C4F312008FBFC4 /* CardSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BB31D621C4F312008FBFC4 /* CardSuit.swift */; };
 		D6BCFD4421C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BCFD4321C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift */; };
+		D6DDB88B21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DDB88A21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift */; };
+		D6DDB88D21C69F1400A87C24 /* HeadsOrTailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DDB88C21C69F1400A87C24 /* HeadsOrTailsPresenter.swift */; };
+		D6DDB88F21C69F1F00A87C24 /* HeadsOrTailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DDB88E21C69F1F00A87C24 /* HeadsOrTailsViewController.swift */; };
+		D6DDB89121C6A89F00A87C24 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DDB89021C6A89F00A87C24 /* Coin.swift */; };
 		D6FBEF8521C27A0B00F6534B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBEF8421C27A0B00F6534B /* AppDelegate.swift */; };
 		D6FBEF8C21C27A0F00F6534B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6FBEF8B21C27A0F00F6534B /* Assets.xcassets */; };
 		D6FBEF9F21C27D5700F6534B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBEF9E21C27D5700F6534B /* AppCoordinator.swift */; };
@@ -28,6 +32,10 @@
 		D6BB31D421C4F219008FBFC4 /* CardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValue.swift; sourceTree = "<group>"; };
 		D6BB31D621C4F312008FBFC4 /* CardSuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSuit.swift; sourceTree = "<group>"; };
 		D6BCFD4321C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardBehaviour.swift"; sourceTree = "<group>"; };
+		D6DDB88A21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsOrTailsCoordinator.swift; sourceTree = "<group>"; };
+		D6DDB88C21C69F1400A87C24 /* HeadsOrTailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsOrTailsPresenter.swift; sourceTree = "<group>"; };
+		D6DDB88E21C69F1F00A87C24 /* HeadsOrTailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsOrTailsViewController.swift; sourceTree = "<group>"; };
+		D6DDB89021C6A89F00A87C24 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		D6FBEF8121C27A0B00F6534B /* JavaLab9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaLab9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FBEF8421C27A0B00F6534B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FBEF8B21C27A0F00F6534B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +82,9 @@
 		D6B46B6321C38AEE00EDB570 /* HeadsOrTails */ = {
 			isa = PBXGroup;
 			children = (
+				D6DDB88A21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift */,
+				D6DDB88E21C69F1F00A87C24 /* HeadsOrTailsViewController.swift */,
+				D6DDB88C21C69F1400A87C24 /* HeadsOrTailsPresenter.swift */,
 			);
 			path = HeadsOrTails;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 				D6BB31D421C4F219008FBFC4 /* CardValue.swift */,
 				D6BB31D621C4F312008FBFC4 /* CardSuit.swift */,
 				D63A157221C4F55200E25647 /* Card.swift */,
+				D6DDB89021C6A89F00A87C24 /* Coin.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -242,11 +254,15 @@
 				D6BB31D721C4F312008FBFC4 /* CardSuit.swift in Sources */,
 				D63A157321C4F55200E25647 /* Card.swift in Sources */,
 				D6FBEF9F21C27D5700F6534B /* AppCoordinator.swift in Sources */,
+				D6DDB88B21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift in Sources */,
+				D6DDB88F21C69F1F00A87C24 /* HeadsOrTailsViewController.swift in Sources */,
 				D6FBEF8521C27A0B00F6534B /* AppDelegate.swift in Sources */,
+				D6DDB89121C6A89F00A87C24 /* Coin.swift in Sources */,
 				D6B46B6C21C38B4200EDB570 /* CardsViewController.swift in Sources */,
 				D6B46B6821C38B2000EDB570 /* CardsCoordinator.swift in Sources */,
 				D6FBEFA121C27DE600F6534B /* TabBarCoordinator.swift in Sources */,
 				D6BCFD4421C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift in Sources */,
+				D6DDB88D21C69F1400A87C24 /* HeadsOrTailsPresenter.swift in Sources */,
 				D6BB31D521C4F219008FBFC4 /* CardValue.swift in Sources */,
 				D6B46B6A21C38B2B00EDB570 /* CardsPresenter.swift in Sources */,
 			);
