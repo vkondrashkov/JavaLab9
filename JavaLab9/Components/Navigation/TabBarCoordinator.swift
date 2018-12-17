@@ -14,10 +14,11 @@ class TabBarCoordinator:  Coordinator {
     private let tabBarController: UITabBarController
     
     private let cardsCoordinator: CardsCoordinator
+    private let calculatorCoordinator: CalculatorCoordinator
     private let headsOrTailsCoordinator: HeadsOrTailsCoordinator
     
     var coordinators: [Coordinator] {
-        return [cardsCoordinator, headsOrTailsCoordinator]
+        return [cardsCoordinator, calculatorCoordinator, headsOrTailsCoordinator]
     }
 
     init(window: UIWindow) {
@@ -32,9 +33,16 @@ class TabBarCoordinator:  Coordinator {
         cardsCoordinator = CardsCoordinator(navigation: cardsNavigation)
         controllers.append(cardsNavigation)
         
+        let calculatorNavigation = UINavigationController()
+        // tabBarIcon
+        // tabBarItem
+        calculatorNavigation.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1) // Temporary
+        calculatorCoordinator = CalculatorCoordinator(navigation: calculatorNavigation)
+        controllers.append(calculatorNavigation)
+        
         let headsOrTailsNavigation = UINavigationController()
         let headsOrTailsTabBarIcon = UIImage(named: "headsOrTails")
-        let headsOrTailsTabBarItem = UITabBarItem(title: "Heads or Tails", image: headsOrTailsTabBarIcon, tag: 1)
+        let headsOrTailsTabBarItem = UITabBarItem(title: "Heads or Tails", image: headsOrTailsTabBarIcon, tag: 2)
         headsOrTailsNavigation.tabBarItem = headsOrTailsTabBarItem
         headsOrTailsCoordinator = HeadsOrTailsCoordinator(navigation: headsOrTailsNavigation)
         controllers.append(headsOrTailsNavigation)
