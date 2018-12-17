@@ -22,7 +22,18 @@ class HeadsOrTailsPresenterImplementation: HeadsOrTailsPresenter {
     }
     
     func coinImageDidTapped() {
-        coin.toss()
+        var headsCounter = 0
+        var tailsCounter = 0
+        for _ in 0..<1000 {
+            coin.toss()
+            if coin.isHeads {
+                headsCounter += 1
+            }
+            else {
+                tailsCounter += 1
+            }
+        }
+        view.display(result: "Heads: \(headsCounter) Tails: \(tailsCounter)")
         view.display(coinName: coin.description)
     }
 }

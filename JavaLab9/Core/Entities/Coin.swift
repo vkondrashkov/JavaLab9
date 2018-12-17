@@ -9,7 +9,7 @@
 import Foundation
 
 class Coin {
-    private var isHeads = true
+    var isHeads = true
     
     var description: String {
         switch isHeads {

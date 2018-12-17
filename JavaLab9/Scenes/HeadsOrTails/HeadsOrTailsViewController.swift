@@ -10,6 +10,7 @@ import UIKit
 
 protocol HeadsOrTailsView: class {
     func display(coinName: String)
+    func display(result: String)
 }
 
 class HeadsOrTailsViewController: UIViewController, HeadsOrTailsView {
@@ -23,6 +24,7 @@ class HeadsOrTailsViewController: UIViewController, HeadsOrTailsView {
     private var containerView = UIView(frame: .zero)
     
     private var coin = UIImageView(frame: .zero)
+    private var resultLabel = UILabel(frame: .zero)
     
     override func loadView() {
         headsOrTailsView.backgroundColor = UIColor(red: 38.0 / 255.0, green: 81.0 / 255.0, blue: 127.0 / 255.0, alpha: 1)
@@ -30,6 +32,13 @@ class HeadsOrTailsViewController: UIViewController, HeadsOrTailsView {
         coin.image = UIImage(named: "heads")
         containerView.addSubview(coin)
         activateCoinConstraints(view: coin)
+        
+        resultLabel.text = " "
+        resultLabel.font = .boldSystemFont(ofSize: 24)
+        resultLabel.textColor = .white
+        resultLabel.textAlignment = .center
+        containerView.addSubview(resultLabel)
+        activateResultLabelConstraints(view: resultLabel, anchorView: coin)
         
         headsOrTailsView.addSubview(containerView)
         activateContainerViewConstraints(view: containerView)
@@ -46,6 +55,7 @@ class HeadsOrTailsViewController: UIViewController, HeadsOrTailsView {
     }
     
     @objc func coinImageDidTapped() {
+        resultLabel.text = " "
         changeCoinWithAnimation {
             self.presenter.coinImageDidTapped()
         }
@@ -54,6 +64,10 @@ class HeadsOrTailsViewController: UIViewController, HeadsOrTailsView {
     func display(coinName: String) {
         let coinImage = UIImage(named: coinName)
         coin.image = coinImage
+    }
+    
+    func display(result: String) {
+        resultLabel.text = result
     }
     
     func changeCoinWithAnimation(presenterCall: @escaping () -> Void) {
@@ -93,9 +107,19 @@ private extension PrivateHeadsOrTailsViewController {
             view.topAnchor.constraint(equalTo: superview.topAnchor),
             view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
             view.widthAnchor.constraint(equalToConstant: 250),
             view.heightAnchor.constraint(equalToConstant: 250)
+            ])
+    }
+    
+    func activateResultLabelConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 15),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
             ])
     }
     
