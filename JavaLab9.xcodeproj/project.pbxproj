@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C68C77821C93BEE00294FF6 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C77721C93BEE00294FF6 /* Ticket.swift */; };
 		D60526E221C78809005DCEF2 /* CalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60526E121C78809005DCEF2 /* CalculatorCoordinator.swift */; };
 		D60526E421C78818005DCEF2 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60526E321C78818005DCEF2 /* CalculatorViewController.swift */; };
 		D60526E621C78827005DCEF2 /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60526E521C78827005DCEF2 /* CalculatorPresenter.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C68C77721C93BEE00294FF6 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		D60526E121C78809005DCEF2 /* CalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCoordinator.swift; sourceTree = "<group>"; };
 		D60526E321C78818005DCEF2 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		D60526E521C78827005DCEF2 /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				D6BB31D621C4F312008FBFC4 /* CardSuit.swift */,
 				D63A157221C4F55200E25647 /* Card.swift */,
 				D6DDB89021C6A89F00A87C24 /* Coin.swift */,
+				9C68C77721C93BEE00294FF6 /* Ticket.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				D6B46B6821C38B2000EDB570 /* CardsCoordinator.swift in Sources */,
 				D6FBEFA121C27DE600F6534B /* TabBarCoordinator.swift in Sources */,
 				D6BCFD4421C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift in Sources */,
+				9C68C77821C93BEE00294FF6 /* Ticket.swift in Sources */,
 				D60526E621C78827005DCEF2 /* CalculatorPresenter.swift in Sources */,
 				D6DDB88D21C69F1400A87C24 /* HeadsOrTailsPresenter.swift in Sources */,
 				D6BB31D521C4F219008FBFC4 /* CardValue.swift in Sources */,

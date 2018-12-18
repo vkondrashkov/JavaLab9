@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CalculatorView: class {
-    
+    func display(result: String)
 }
 
 class CalculatorViewController: UIViewController, CalculatorView {
@@ -51,6 +51,8 @@ class CalculatorViewController: UIViewController, CalculatorView {
     private var zeroButton = UIButton(frame: .zero)
     private var pointButton = UIButton(frame: .zero)
     private var equalsButton = UIButton(frame: .zero)
+    
+    private var resultLabel = UILabel(frame: .zero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,7 +207,7 @@ class CalculatorViewController: UIViewController, CalculatorView {
         pointButton.setTitle(".", for: .normal)
         pointButton.layer.cornerRadius = buttonSize / 2
         pointButton.tag = 17
-        pointButton.addTarget(self, action: #selector(signButtonDidPressed), for: .touchUpInside)
+        pointButton.addTarget(self, action: #selector(signButtonDidPressed(_:)), for: .touchUpInside)
         fifthButtonRow.addSubview(pointButton)
         activateMidButtonConstraints(view: pointButton, anchorView: zeroButton)
         
@@ -213,7 +215,7 @@ class CalculatorViewController: UIViewController, CalculatorView {
         equalsButton.setTitle("=", for: .normal)
         equalsButton.layer.cornerRadius = buttonSize / 2
         equalsButton.tag = 16
-        equalsButton.addTarget(self, action: #selector(signButtonDidPressed), for: .touchUpInside)
+        equalsButton.addTarget(self, action: #selector(signButtonDidPressed(_:)), for: .touchUpInside)
         fifthButtonRow.addSubview(equalsButton)
         activateLastButtonConstraints(view: equalsButton, anchorView: pointButton)
         
@@ -223,15 +225,28 @@ class CalculatorViewController: UIViewController, CalculatorView {
         calculatorView.addSubview(buttonsTableView)
         activateButtonsTableViewConstraints(view: buttonsTableView)
         
+        resultLabel.text = " "
+        resultLabel.font = .boldSystemFont(ofSize: 48)
+        resultLabel.textColor = .white
+        resultLabel.textAlignment = .right
+        calculatorView.addSubview(resultLabel)
+        activateResultLabelConstraints(view: resultLabel, anchorView: buttonsTableView)
+        
         view = calculatorView
     }
     
-    @objc func numberButtonDidPressed() {
-    
+    @objc func numberButtonDidPressed(_ sender: UIButton) {
+        let tag = sender.tag
+        presenter.numberButtonDidPressed(tag: tag)
     }
     
-    @objc func signButtonDidPressed() {
-        
+    @objc func signButtonDidPressed(_ sender: UIButton) {
+        let tag = sender.tag
+        presenter.signButtonDidPressed(tag: tag)
+    }
+    
+    func display(result: String) {
+        resultLabel.text = result
     }
 }
 
@@ -322,7 +337,19 @@ private extension PrivateCalculatorViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
-            view.centerYAnchor.constraint(equalTo: superview.centerYAnchor)
+            view.bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor),
+            view.topAnchor.constraint(greaterThanOrEqualTo: superview.safeAreaLayoutGuide.topAnchor)
+            ])
+    }
+    
+    func activateResultLabelConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.bottomAnchor.constraint(equalTo: anchorView.topAnchor, constant: -buttonOffset),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: buttonOffset),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -buttonOffset),
+            view.topAnchor.constraint(greaterThanOrEqualTo: superview.safeAreaLayoutGuide.topAnchor)
             ])
     }
 }

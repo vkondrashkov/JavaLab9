@@ -9,7 +9,8 @@
 import Foundation
 
 protocol CalculatorPresenter {
-    
+    func numberButtonDidPressed(tag: Int)
+    func signButtonDidPressed(tag: Int)
 }
 
 class CalculatorPresenterImplementation: CalculatorPresenter {
@@ -17,5 +18,14 @@ class CalculatorPresenterImplementation: CalculatorPresenter {
     
     init(view: CalculatorView) {
         self.view = view
+    }
+    
+    func numberButtonDidPressed(tag: Int) {
+        // Temprorary
+        view.display(result: String(tag))
+    }
+    
+    func signButtonDidPressed(tag: Int) {
+        print(tag)
     }
 }
