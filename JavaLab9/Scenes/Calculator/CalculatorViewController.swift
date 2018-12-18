@@ -30,7 +30,7 @@ class CalculatorViewController: UIViewController, CalculatorView {
     
     private var clearButton = UIButton(frame: .zero)
     private var emptyButton1 = UIButton(frame: .zero)
-    private var emptyButton2 = UIButton(frame: .zero)
+    private var modulusButton = UIButton(frame: .zero)
     private var divideButton = UIButton(frame: .zero)
     
     private var sevenButton = UIButton(frame: .zero)
@@ -52,7 +52,7 @@ class CalculatorViewController: UIViewController, CalculatorView {
     private var pointButton = UIButton(frame: .zero)
     private var equalsButton = UIButton(frame: .zero)
     
-    private var resultLabel = UILabel(frame: .zero)
+    var resultLabel = UILabel(frame: .zero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,19 +73,21 @@ class CalculatorViewController: UIViewController, CalculatorView {
         firstButtonRow.addSubview(emptyButton1)
         activateMidButtonConstraints(view: emptyButton1, anchorView: clearButton)
         
-        emptyButton2.backgroundColor = .lightGray
-        emptyButton2.setTitle(" ", for: .normal)
-        emptyButton2.layer.cornerRadius = buttonSize / 2
-        firstButtonRow.addSubview(emptyButton2)
-        activateMidButtonConstraints(view: emptyButton2, anchorView: emptyButton1)
+        modulusButton.backgroundColor = .orange
+        modulusButton.setTitle("%", for: .normal)
+        modulusButton.layer.cornerRadius = buttonSize / 2
+        modulusButton.tag = 12
+        modulusButton.addTarget(self, action: #selector(signButtonDidPressed(_:)), for: .touchUpInside)
+        firstButtonRow.addSubview(modulusButton)
+        activateMidButtonConstraints(view: modulusButton, anchorView: emptyButton1)
         
         divideButton.backgroundColor = .orange
         divideButton.setTitle("/", for: .normal)
         divideButton.layer.cornerRadius = buttonSize / 2
-        divideButton.tag = 12
+        divideButton.tag = 13
         divideButton.addTarget(self, action: #selector(signButtonDidPressed), for: .touchUpInside)
         firstButtonRow.addSubview(divideButton)
-        activateLastButtonConstraints(view: divideButton, anchorView: emptyButton2)
+        activateLastButtonConstraints(view: divideButton, anchorView: modulusButton)
         
         buttonsTableView.addSubview(firstButtonRow)
         activateFirstButtonsRowConstraints(view: firstButtonRow)
@@ -117,7 +119,7 @@ class CalculatorViewController: UIViewController, CalculatorView {
         multiplicationButton.backgroundColor = .orange
         multiplicationButton.setTitle("x", for: .normal)
         multiplicationButton.layer.cornerRadius = buttonSize / 2
-        multiplicationButton.tag = 13
+        multiplicationButton.tag = 14
         multiplicationButton.addTarget(self, action: #selector(signButtonDidPressed), for: .touchUpInside)
         secondButtonRow.addSubview(multiplicationButton)
         activateLastButtonConstraints(view: multiplicationButton, anchorView: nineButton)
@@ -152,7 +154,7 @@ class CalculatorViewController: UIViewController, CalculatorView {
         subtractionButton.backgroundColor = .orange
         subtractionButton.setTitle("-", for: .normal)
         subtractionButton.layer.cornerRadius = buttonSize / 2
-        subtractionButton.tag = 14
+        subtractionButton.tag = 15
         subtractionButton.addTarget(self, action: #selector(signButtonDidPressed), for: .touchUpInside)
         thirdButtonRow.addSubview(subtractionButton)
         activateLastButtonConstraints(view: subtractionButton, anchorView: sixButton)
@@ -187,7 +189,7 @@ class CalculatorViewController: UIViewController, CalculatorView {
         additionButton.backgroundColor = .orange
         additionButton.setTitle("+", for: .normal)
         additionButton.layer.cornerRadius = buttonSize / 2
-        additionButton.tag = 15
+        additionButton.tag = 16
         additionButton.addTarget(self, action: #selector(signButtonDidPressed), for: .touchUpInside)
         fourthButtonRow.addSubview(additionButton)
         activateLastButtonConstraints(view: additionButton, anchorView: threeButton)
@@ -206,15 +208,15 @@ class CalculatorViewController: UIViewController, CalculatorView {
         pointButton.backgroundColor = .gray
         pointButton.setTitle(".", for: .normal)
         pointButton.layer.cornerRadius = buttonSize / 2
-        pointButton.tag = 17
-        pointButton.addTarget(self, action: #selector(signButtonDidPressed(_:)), for: .touchUpInside)
+        pointButton.tag = 10
+        pointButton.addTarget(self, action: #selector(numberButtonDidPressed(_:)), for: .touchUpInside)
         fifthButtonRow.addSubview(pointButton)
         activateMidButtonConstraints(view: pointButton, anchorView: zeroButton)
         
         equalsButton.backgroundColor = .orange
         equalsButton.setTitle("=", for: .normal)
         equalsButton.layer.cornerRadius = buttonSize / 2
-        equalsButton.tag = 16
+        equalsButton.tag = 17
         equalsButton.addTarget(self, action: #selector(signButtonDidPressed(_:)), for: .touchUpInside)
         fifthButtonRow.addSubview(equalsButton)
         activateLastButtonConstraints(view: equalsButton, anchorView: pointButton)

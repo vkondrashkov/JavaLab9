@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C68C77821C93BEE00294FF6 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C77721C93BEE00294FF6 /* Ticket.swift */; };
+		9C68C77A21C9700400294FF6 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C77921C9700400294FF6 /* Calculator.swift */; };
+		9C68C77C21C97F9100294FF6 /* CalculatorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C77B21C97F9100294FF6 /* CalculatorOperation.swift */; };
 		D60526E221C78809005DCEF2 /* CalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60526E121C78809005DCEF2 /* CalculatorCoordinator.swift */; };
 		D60526E421C78818005DCEF2 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60526E321C78818005DCEF2 /* CalculatorViewController.swift */; };
 		D60526E621C78827005DCEF2 /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60526E521C78827005DCEF2 /* CalculatorPresenter.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		9C68C77721C93BEE00294FF6 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		9C68C77921C9700400294FF6 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		9C68C77B21C97F9100294FF6 /* CalculatorOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorOperation.swift; sourceTree = "<group>"; };
 		D60526E121C78809005DCEF2 /* CalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCoordinator.swift; sourceTree = "<group>"; };
 		D60526E321C78818005DCEF2 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		D60526E521C78827005DCEF2 /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				D63A157221C4F55200E25647 /* Card.swift */,
 				D6DDB89021C6A89F00A87C24 /* Coin.swift */,
 				9C68C77721C93BEE00294FF6 /* Ticket.swift */,
+				9C68C77921C9700400294FF6 /* Calculator.swift */,
+				9C68C77B21C97F9100294FF6 /* CalculatorOperation.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 			files = (
 				D60526E221C78809005DCEF2 /* CalculatorCoordinator.swift in Sources */,
 				D6BB31D721C4F312008FBFC4 /* CardSuit.swift in Sources */,
+				9C68C77A21C9700400294FF6 /* Calculator.swift in Sources */,
+				9C68C77C21C97F9100294FF6 /* CalculatorOperation.swift in Sources */,
 				D60526E421C78818005DCEF2 /* CalculatorViewController.swift in Sources */,
 				D63A157321C4F55200E25647 /* Card.swift in Sources */,
 				D6FBEF9F21C27D5700F6534B /* AppCoordinator.swift in Sources */,
