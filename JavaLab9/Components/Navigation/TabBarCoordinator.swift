@@ -34,36 +34,33 @@ class TabBarCoordinator:  Coordinator {
         
         let cardsNavigation = UINavigationController()
         let cardsTabBarIcon = UIImage(named: "cards")
-        let cardsTabBarItem = UITabBarItem(title: "Cards", image: cardsTabBarIcon, tag: 0)
+        let cardsTabBarItem = UITabBarItem(title: "Cards", image: nil, tag: 0)
         cardsNavigation.tabBarItem = cardsTabBarItem
         cardsCoordinator = CardsCoordinator(navigation: cardsNavigation)
         controllers.append(cardsNavigation)
         
         let calculatorNavigation = UINavigationController()
-        // tabBarIcon
-        // tabBarItem
-        calculatorNavigation.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1) // Temporary
+        let calculatorTabBarItem = UITabBarItem(title: "Calculator", image: nil, tag: 1)
+        calculatorNavigation.tabBarItem = calculatorTabBarItem
         calculatorCoordinator = CalculatorCoordinator(navigation: calculatorNavigation)
         controllers.append(calculatorNavigation)
         
         let busTicketNavigation = UINavigationController()
-        // tabBarIcon
-        // tabBarItem
-        busTicketNavigation.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+        let busTicketTabBarItem = UITabBarItem(title: "Bus ticket", image: nil, tag: 2)
+        busTicketNavigation.tabBarItem = busTicketTabBarItem
         busTicketCoordinator = BusTicketCoordinator(navigation: busTicketNavigation)
         controllers.append(busTicketNavigation)
         
         let headsOrTailsNavigation = UINavigationController()
         let headsOrTailsTabBarIcon = UIImage(named: "headsOrTails")
-        let headsOrTailsTabBarItem = UITabBarItem(title: "Heads or Tails", image: headsOrTailsTabBarIcon, tag: 3)
+        let headsOrTailsTabBarItem = UITabBarItem(title: "Heads or Tails", image: nil, tag: 3)
         headsOrTailsNavigation.tabBarItem = headsOrTailsTabBarItem
         headsOrTailsCoordinator = HeadsOrTailsCoordinator(navigation: headsOrTailsNavigation)
         controllers.append(headsOrTailsNavigation)
         
         let multiplicationTableNavigation = UINavigationController()
-        // tabBarIcon
-        // tabBarItem
-        multiplicationTableNavigation.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 4)
+        let multiplicationTabBarItem = UITabBarItem(title: "Multiplication table", image: nil, tag: 4)
+        multiplicationTableNavigation.tabBarItem = multiplicationTabBarItem
         multiplicationTableCoordinator = MultiplicationTableCoordinator(navigation: multiplicationTableNavigation)
         controllers.append(multiplicationTableNavigation)
         
