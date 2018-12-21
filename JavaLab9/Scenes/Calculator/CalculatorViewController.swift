@@ -30,7 +30,7 @@ class CalculatorViewController: UIViewController, CalculatorView {
     
     private var clearButton = UIButton(frame: .zero)
     private var emptyButton1 = UIButton(frame: .zero)
-    private var modulusButton = UIButton(frame: .zero)
+    private var emptyButton2 = UIButton(frame: .zero)
     private var divideButton = UIButton(frame: .zero)
     
     private var sevenButton = UIButton(frame: .zero)
@@ -73,13 +73,11 @@ class CalculatorViewController: UIViewController, CalculatorView {
         firstButtonRow.addSubview(emptyButton1)
         activateMidButtonConstraints(view: emptyButton1, anchorView: clearButton)
         
-        modulusButton.backgroundColor = .orange
-        modulusButton.setTitle("%", for: .normal)
-        modulusButton.layer.cornerRadius = buttonSize / 2
-        modulusButton.tag = 12
-        modulusButton.addTarget(self, action: #selector(signButtonDidPressed(_:)), for: .touchUpInside)
-        firstButtonRow.addSubview(modulusButton)
-        activateMidButtonConstraints(view: modulusButton, anchorView: emptyButton1)
+        emptyButton2.backgroundColor = .lightGray
+        emptyButton2.setTitle(" ", for: .normal)
+        emptyButton2.layer.cornerRadius = buttonSize / 2
+        firstButtonRow.addSubview(emptyButton2)
+        activateMidButtonConstraints(view: emptyButton2, anchorView: emptyButton1)
         
         divideButton.backgroundColor = .orange
         divideButton.setTitle("/", for: .normal)
@@ -87,7 +85,7 @@ class CalculatorViewController: UIViewController, CalculatorView {
         divideButton.tag = 13
         divideButton.addTarget(self, action: #selector(signButtonDidPressed), for: .touchUpInside)
         firstButtonRow.addSubview(divideButton)
-        activateLastButtonConstraints(view: divideButton, anchorView: modulusButton)
+        activateLastButtonConstraints(view: divideButton, anchorView: emptyButton2)
         
         buttonsTableView.addSubview(firstButtonRow)
         activateFirstButtonsRowConstraints(view: firstButtonRow)

@@ -15,10 +15,16 @@ class TabBarCoordinator:  Coordinator {
     
     private let cardsCoordinator: CardsCoordinator
     private let calculatorCoordinator: CalculatorCoordinator
+    private let busTicketCoordinator: BusTicketCoordinator
     private let headsOrTailsCoordinator: HeadsOrTailsCoordinator
+    private let multiplicationTableCoordinator: MultiplicationTableCoordinator
     
     var coordinators: [Coordinator] {
-        return [cardsCoordinator, calculatorCoordinator, headsOrTailsCoordinator]
+        return [cardsCoordinator,
+                calculatorCoordinator,
+                busTicketCoordinator,
+                headsOrTailsCoordinator,
+                multiplicationTableCoordinator]
     }
 
     init(window: UIWindow) {
@@ -40,12 +46,26 @@ class TabBarCoordinator:  Coordinator {
         calculatorCoordinator = CalculatorCoordinator(navigation: calculatorNavigation)
         controllers.append(calculatorNavigation)
         
+        let busTicketNavigation = UINavigationController()
+        // tabBarIcon
+        // tabBarItem
+        busTicketNavigation.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+        busTicketCoordinator = BusTicketCoordinator(navigation: busTicketNavigation)
+        controllers.append(busTicketNavigation)
+        
         let headsOrTailsNavigation = UINavigationController()
         let headsOrTailsTabBarIcon = UIImage(named: "headsOrTails")
-        let headsOrTailsTabBarItem = UITabBarItem(title: "Heads or Tails", image: headsOrTailsTabBarIcon, tag: 2)
+        let headsOrTailsTabBarItem = UITabBarItem(title: "Heads or Tails", image: headsOrTailsTabBarIcon, tag: 3)
         headsOrTailsNavigation.tabBarItem = headsOrTailsTabBarItem
         headsOrTailsCoordinator = HeadsOrTailsCoordinator(navigation: headsOrTailsNavigation)
         controllers.append(headsOrTailsNavigation)
+        
+        let multiplicationTableNavigation = UINavigationController()
+        // tabBarIcon
+        // tabBarItem
+        multiplicationTableNavigation.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 4)
+        multiplicationTableCoordinator = MultiplicationTableCoordinator(navigation: multiplicationTableNavigation)
+        controllers.append(multiplicationTableNavigation)
         
         tabBarController.viewControllers = controllers
     }

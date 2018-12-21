@@ -44,6 +44,12 @@ class CalculatorPresenterImplementation: CalculatorPresenter {
             return
         }
         if tag == 17 {
+            if model.operation == .division
+                && model.currentNumber == 0 {
+                view.display(result: "Error")
+                return
+            }
+            
             model.solve() {
                 if let number = self.model.currentNumber {
                     let length = self.model.length(number: number)
@@ -63,10 +69,6 @@ class CalculatorPresenterImplementation: CalculatorPresenter {
             model.hasFloatingPoint = false
             model.hasDecimalPlaces = false
             switch (tag) {
-            case 12:
-                // Modulus
-                view.display(result: "%")
-                model.operation = .modulus
             case 13:
                 // Division
                 view.display(result: "/")

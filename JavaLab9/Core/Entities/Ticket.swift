@@ -10,16 +10,7 @@ import Foundation
 
 class Ticket {
     var number: Int
-    
-    private var length: Int {
-        var currentNumber = self.number
-        var count = 0
-        while (currentNumber != 0) {
-            currentNumber /= 10
-            count += 1
-        }
-        return count
-    }
+    var length: Int
     
     var isLucky: Bool {
         let halfLength = self.length / 2
@@ -35,8 +26,9 @@ class Ticket {
         return firstHalfSum == lastHalfSum
     }
     
-    init(number: Int) {
+    init(number: Int, length: Int) {
         self.number = number
+        self.length = length
     }
     
     private func countDigitsSum(border: Int, number: inout Int) -> Int {
