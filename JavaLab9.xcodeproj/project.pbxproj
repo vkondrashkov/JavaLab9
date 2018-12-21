@@ -7,15 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C68C77821C93BEE00294FF6 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C77721C93BEE00294FF6 /* Ticket.swift */; };
+		9C68C77A21C9700400294FF6 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C77921C9700400294FF6 /* Calculator.swift */; };
+		9C68C77C21C97F9100294FF6 /* CalculatorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C77B21C97F9100294FF6 /* CalculatorOperation.swift */; };
+		D60526E221C78809005DCEF2 /* CalculatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60526E121C78809005DCEF2 /* CalculatorCoordinator.swift */; };
+		D60526E421C78818005DCEF2 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60526E321C78818005DCEF2 /* CalculatorViewController.swift */; };
+		D60526E621C78827005DCEF2 /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60526E521C78827005DCEF2 /* CalculatorPresenter.swift */; };
+		D63A157321C4F55200E25647 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A157221C4F55200E25647 /* Card.swift */; };
+		D6B46B6821C38B2000EDB570 /* CardsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B46B6721C38B2000EDB570 /* CardsCoordinator.swift */; };
+		D6B46B6A21C38B2B00EDB570 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B46B6921C38B2B00EDB570 /* CardsPresenter.swift */; };
+		D6B46B6C21C38B4200EDB570 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B46B6B21C38B4200EDB570 /* CardsViewController.swift */; };
+		D6BB31D521C4F219008FBFC4 /* CardValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BB31D421C4F219008FBFC4 /* CardValue.swift */; };
+		D6BB31D721C4F312008FBFC4 /* CardSuit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BB31D621C4F312008FBFC4 /* CardSuit.swift */; };
+		D6BCFD4421C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BCFD4321C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift */; };
+		D6DDB88B21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DDB88A21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift */; };
+		D6DDB88D21C69F1400A87C24 /* HeadsOrTailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DDB88C21C69F1400A87C24 /* HeadsOrTailsPresenter.swift */; };
+		D6DDB88F21C69F1F00A87C24 /* HeadsOrTailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DDB88E21C69F1F00A87C24 /* HeadsOrTailsViewController.swift */; };
+		D6DDB89121C6A89F00A87C24 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DDB89021C6A89F00A87C24 /* Coin.swift */; };
 		D6FBEF8521C27A0B00F6534B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBEF8421C27A0B00F6534B /* AppDelegate.swift */; };
 		D6FBEF8C21C27A0F00F6534B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6FBEF8B21C27A0F00F6534B /* Assets.xcassets */; };
+		D6FBEF9F21C27D5700F6534B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBEF9E21C27D5700F6534B /* AppCoordinator.swift */; };
+		D6FBEFA121C27DE600F6534B /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FBEFA021C27DE600F6534B /* TabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C68C77721C93BEE00294FF6 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		9C68C77921C9700400294FF6 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		9C68C77B21C97F9100294FF6 /* CalculatorOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorOperation.swift; sourceTree = "<group>"; };
+		D60526E121C78809005DCEF2 /* CalculatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCoordinator.swift; sourceTree = "<group>"; };
+		D60526E321C78818005DCEF2 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		D60526E521C78827005DCEF2 /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
+		D63A157221C4F55200E25647 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		D6B46B6721C38B2000EDB570 /* CardsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCoordinator.swift; sourceTree = "<group>"; };
+		D6B46B6921C38B2B00EDB570 /* CardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
+		D6B46B6B21C38B4200EDB570 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		D6BB31D421C4F219008FBFC4 /* CardValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValue.swift; sourceTree = "<group>"; };
+		D6BB31D621C4F312008FBFC4 /* CardSuit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSuit.swift; sourceTree = "<group>"; };
+		D6BCFD4321C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardBehaviour.swift"; sourceTree = "<group>"; };
+		D6DDB88A21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsOrTailsCoordinator.swift; sourceTree = "<group>"; };
+		D6DDB88C21C69F1400A87C24 /* HeadsOrTailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsOrTailsPresenter.swift; sourceTree = "<group>"; };
+		D6DDB88E21C69F1F00A87C24 /* HeadsOrTailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadsOrTailsViewController.swift; sourceTree = "<group>"; };
+		D6DDB89021C6A89F00A87C24 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		D6FBEF8121C27A0B00F6534B /* JavaLab9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaLab9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FBEF8421C27A0B00F6534B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FBEF8B21C27A0F00F6534B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6FBEF9021C27A0F00F6534B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6FBEF9E21C27D5700F6534B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D6FBEFA021C27DE600F6534B /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +67,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D6B46B6021C38AAF00EDB570 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				D6B46B6721C38B2000EDB570 /* CardsCoordinator.swift */,
+				D6B46B6B21C38B4200EDB570 /* CardsViewController.swift */,
+				D6B46B6921C38B2B00EDB570 /* CardsPresenter.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		D6B46B6121C38AD300EDB570 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				D60526E121C78809005DCEF2 /* CalculatorCoordinator.swift */,
+				D60526E321C78818005DCEF2 /* CalculatorViewController.swift */,
+				D60526E521C78827005DCEF2 /* CalculatorPresenter.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		D6B46B6221C38ADA00EDB570 /* BusTicket */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusTicket;
+			sourceTree = "<group>";
+		};
+		D6B46B6321C38AEE00EDB570 /* HeadsOrTails */ = {
+			isa = PBXGroup;
+			children = (
+				D6DDB88A21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift */,
+				D6DDB88E21C69F1F00A87C24 /* HeadsOrTailsViewController.swift */,
+				D6DDB88C21C69F1400A87C24 /* HeadsOrTailsPresenter.swift */,
+			);
+			path = HeadsOrTails;
+			sourceTree = "<group>";
+		};
+		D6B46B6421C38AF700EDB570 /* MultiplicationTable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MultiplicationTable;
+			sourceTree = "<group>";
+		};
 		D6FBEF7821C27A0B00F6534B = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +135,7 @@
 				D6FBEF9721C27AF600F6534B /* Core */,
 				D6FBEF9621C27AED00F6534B /* Scenes */,
 				D6FBEF8421C27A0B00F6534B /* AppDelegate.swift */,
+				D6FBEF9E21C27D5700F6534B /* AppCoordinator.swift */,
 				D6FBEF8B21C27A0F00F6534B /* Assets.xcassets */,
 				D6FBEF9021C27A0F00F6534B /* Info.plist */,
 			);
@@ -62,6 +145,11 @@
 		D6FBEF9621C27AED00F6534B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D6B46B6421C38AF700EDB570 /* MultiplicationTable */,
+				D6B46B6321C38AEE00EDB570 /* HeadsOrTails */,
+				D6B46B6221C38ADA00EDB570 /* BusTicket */,
+				D6B46B6121C38AD300EDB570 /* Calculator */,
+				D6B46B6021C38AAF00EDB570 /* Cards */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -77,6 +165,13 @@
 		D6FBEF9821C27AFE00F6534B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D6BB31D421C4F219008FBFC4 /* CardValue.swift */,
+				D6BB31D621C4F312008FBFC4 /* CardSuit.swift */,
+				D63A157221C4F55200E25647 /* Card.swift */,
+				D6DDB89021C6A89F00A87C24 /* Coin.swift */,
+				9C68C77721C93BEE00294FF6 /* Ticket.swift */,
+				9C68C77921C9700400294FF6 /* Calculator.swift */,
+				9C68C77B21C97F9100294FF6 /* CalculatorOperation.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -84,6 +179,7 @@
 		D6FBEF9921C27B0800F6534B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D6BCFD4321C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -91,6 +187,7 @@
 		D6FBEF9A21C27B0E00F6534B /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				D6FBEFA021C27DE600F6534B /* TabBarCoordinator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -172,7 +269,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60526E221C78809005DCEF2 /* CalculatorCoordinator.swift in Sources */,
+				D6BB31D721C4F312008FBFC4 /* CardSuit.swift in Sources */,
+				9C68C77A21C9700400294FF6 /* Calculator.swift in Sources */,
+				9C68C77C21C97F9100294FF6 /* CalculatorOperation.swift in Sources */,
+				D60526E421C78818005DCEF2 /* CalculatorViewController.swift in Sources */,
+				D63A157321C4F55200E25647 /* Card.swift in Sources */,
+				D6FBEF9F21C27D5700F6534B /* AppCoordinator.swift in Sources */,
+				D6DDB88B21C69F0100A87C24 /* HeadsOrTailsCoordinator.swift in Sources */,
+				D6DDB88F21C69F1F00A87C24 /* HeadsOrTailsViewController.swift in Sources */,
 				D6FBEF8521C27A0B00F6534B /* AppDelegate.swift in Sources */,
+				D6DDB89121C6A89F00A87C24 /* Coin.swift in Sources */,
+				D6B46B6C21C38B4200EDB570 /* CardsViewController.swift in Sources */,
+				D6B46B6821C38B2000EDB570 /* CardsCoordinator.swift in Sources */,
+				D6FBEFA121C27DE600F6534B /* TabBarCoordinator.swift in Sources */,
+				D6BCFD4421C51D1900084BE0 /* UIViewController+KeyboardBehaviour.swift in Sources */,
+				9C68C77821C93BEE00294FF6 /* Ticket.swift in Sources */,
+				D60526E621C78827005DCEF2 /* CalculatorPresenter.swift in Sources */,
+				D6DDB88D21C69F1400A87C24 /* HeadsOrTailsPresenter.swift in Sources */,
+				D6BB31D521C4F219008FBFC4 /* CardValue.swift in Sources */,
+				D6B46B6A21C38B2B00EDB570 /* CardsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
